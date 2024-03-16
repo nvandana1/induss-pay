@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">
+        Delete
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of dataList" (click)="patchToUpdate(user)">
+      <th scope="row">{{user.id}}</th>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.gender }}</td>
+      <td><button class="btn btn-danger" (click)="onDelete(user.id,$event)"> Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()" class="container">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" formControlName="first_name" class="form-control my-1">
+      <div class="container red-text" *ngIf="dataForm.get('first_name')?.invalid && checkRequired">
+        <small>First name required</small>
+      </div>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" formControlName="last_name" class="form-control my-1">
+      <div class="container red-text" *ngIf="dataForm.get('last_name')?.invalid && checkRequired">
+        <small>Last name required</small>
+      </div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" formControlName="age" class="form-control my-1">
+      <div class="container red-text" *ngIf="dataForm.get('age')?.invalid && checkRequired">
+        <small>Age required</small>
+      </div>
+      <label for="gender">Gender:</label>
+      <input type="text" id="gender" formControlName="gender" class="form-control my-1">
+      <div class="container red-text" *ngIf="dataForm.get('gender')?.invalid && checkRequired">
+        <small>Gender required</small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary my-2">Submit</button>
+  </div>
+</form>
+

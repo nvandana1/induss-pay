@@ -1,0 +1,41 @@
+app-our-story{
+//  animation start
+
+
+  .rotate img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate animation */
+  @keyframes rotateForward {
+    0% {
+      transform: rotate(20deg); /* Initial rotation on hover */
+    }
+    50% {
+      transform: rotate(-20deg); /* Maintain rotation for half the duration */
+    }
+    100% {
+      transform: rotate(0deg); /* Return to original rotation */
+    }
+  }
+
+  .rotate:hover img{
+    animation: rotateForward 2s ease forwards; /* Apply animation on hover */
+  }
+
+  .animated-text {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s; /* Smooth transition for scale animation */
+  }
+
+  /* Scale animation on hover */
+  .animated-text:hover {
+    transform: scale(1.2); /* Scale the text by 20% on hover */
+  }
+
+}

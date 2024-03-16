@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body{
+  margin: 0;
+  height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+
+.main,.our-service,.case-study,.footer,.our-story,.why-choose-us,.testimonal {
+  min-height: 100vh;
+}
+
+.why-choose-us{
+  background: #F4F7FA;
+}
+
+.main{
+  background: #F4F7FA;
+  background-image: url("/assets/Bitmap.png");
+}
+
+
+.btn-primary{
+  --bs-btn-bg: #1e23e5;
+}
+
+.link{
+  cursor: pointer;
+}
+
+.red-text{
+  color: #F64B4B;
+
+}
+
+.bold{
+  font-weight: bold;
+}
+
